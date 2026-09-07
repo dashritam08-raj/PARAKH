@@ -53,15 +53,28 @@ from app.auth import (
 # PATHS
 # ============================================================
 
-BASE_DIR = Path(__file__).resolve().parents[2]
+APP_DIR = Path(__file__).resolve().parent
+BACKEND_DIR = APP_DIR.parent
+PROJECT_ROOT = BACKEND_DIR.parent
 
-RULES_FILE = (
-    BASE_DIR
+PROJECT_RULES_FILE = (
+    PROJECT_ROOT
     / "legal_data"
     / "rules"
     / "compliance_rules.json"
 )
 
+DOCKER_RULES_FILE = (
+    BACKEND_DIR
+    / "legal_data"
+    / "rules"
+    / "compliance_rules.json"
+)
+
+if PROJECT_RULES_FILE.exists():
+    RULES_FILE = PROJECT_RULES_FILE
+else:
+    RULES_FILE = DOCKER_RULES_FILE
 
 # ============================================================
 # APP
