@@ -94,14 +94,13 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
-        "http://192.168.0.107:5173",
-        "https://pension-actors-approval-wishing.trycloudflare.com",
+        "https://parakh-fawn.vercel.app",
+        "https://parakh-4zajf7cg5-hexa-elites.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 # ============================================================
 # LOAD LEGAL RULES
