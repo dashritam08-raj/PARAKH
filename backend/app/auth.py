@@ -19,6 +19,8 @@ app.database.
 from datetime import datetime, timedelta, timezone
 import hashlib
 import secrets
+import os
+
 
 from fastapi import HTTPException, Request, Response
 
@@ -687,11 +689,19 @@ def set_session_cookie(
     expires_at: str
 ):
     """
-    Set the authentication cookie.
+    Set the authentication session cookie.
 
-    HttpOnly prevents JavaScript from reading the session token.
-    SameSite=Lax is used for the local HTTP frontend/backend setup.
-    Secure=False is required for the local HTTP development server.
+    Local development:
+        Secure=False
+        SameSite=Lax
+
+    Production:
+        Secure=True
+        SameSite=None
+
+    SameSite=None is required because the
+    Vercel frontend and Render backend are
+    on different sites.
     """
 
     expires_datetime = _parse_datetime(
@@ -714,17 +724,28 @@ def set_session_cookie(
             remaining
         )
 
+    is_production = (
+        os.getenv(
+            "PARAKH_ENV",
+            "development"
+        ).strip().lower()
+        == "production"
+    )
+
     response.set_cookie(
         key=SESSION_COOKIE_NAME,
         value=session_token,
         max_age=max_age,
         expires=max_age,
         httponly=True,
-        secure=False,
-        samesite="lax",
+        secure=is_production,
+        samesite=(
+            "none"
+            if is_production
+            else "lax"
+        ),
         path="/"
     )
-
 
 # ============================================================
 # LOGOUT
