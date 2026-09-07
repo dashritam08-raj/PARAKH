@@ -1,0 +1,31 @@
+# Dependencies
+frontend/node_modules/
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# Build
+frontend/dist/
+
+# Local database
+data/*.db
+data/*.db-wal
+data/*.db-shm
+
+# Uploaded/generated files
+uploads/
+backend/generated_reports/
+backend/inspection_history/
+
+# Environment/secrets
+.env
+.env.*
+!.env.example
+
+# Local development
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

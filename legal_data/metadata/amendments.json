@@ -1,0 +1,119 @@
+{
+  "regulation": "Legal Metrology (Packaged Commodities) Rules, 2011",
+  "amendments": [
+    {
+     "document": "2021.pdf",
+     "year": 2021,
+     "effective_date": "2022-04-01"
+   },
+    {
+      "document": "2022_01.pdf",
+      "year": 2022,
+      "effective_date": "2022-10-01"
+    },
+    {
+      "document": "2022_02.pdf",
+      "year": 2022,
+      "effective_date": null,
+      "effective_date_rule": "date of publication in the Official Gazette"
+    },
+    {
+      "document": "2022_03.pdf",
+      "year": 2022,
+      "effective_date": null,
+      "effective_date_rule": "date of publication in the Official Gazette"
+    },
+    {
+      "document": "2022_04.pdf",
+      "year": 2022,
+      "effective_date": null,
+      "effective_date_rule": "date of publication in the Official Gazette"
+    },
+    {
+      "document": "2022_05.pdf",
+      "year": 2022,
+      "effective_date": null,
+       "effective_date_rule": "date of publication in the Official Gazette"
+    },
+    {
+      "document": "2023_01.pdf",
+      "year": 2023,
+      "effective_date": null,
+      "effective_date_rule": "date of publication in the Official Gazette"
+    },
+    {
+      "document": "2023_02.pdf",
+      "year": 2023,
+      "effective_date": null,
+      "effective_date_rule": "date of publication in the Official Gazette"
+    },
+    {
+      "document": "2023_03.pdf",
+      "year": 2023,
+      "effective_date": null,
+      "effective_date_rule": "date of publication in the Official Gazette"
+
+    },
+    {
+      "document": "2023_04.pdf",
+      "year": 2023,
+      "effective_date": null,
+      "effective_date_rule": "date of publication in the Official Gazette"
+
+    },
+    {
+      "document": "2023_05.pdf",
+      "year": 2023,
+      "effective_date": null,
+      "effective_date_rule": "date of publication in the Official Gazette"
+
+    },
+    {
+      "document": "2023_06.pdf",
+      "year": 2023,
+      "effective_date": null,
+      "effective_date_rule": "date of publication in the Official Gazette"
+
+    },
+    {
+      "document": "2023_07.pdf",
+      "year": 2023,
+      "effective_date": null,
+      "effective_date_rule": "date of publication in the Official Gazette"
+
+    },
+    {
+      "document": "2023_08.pdf",
+      "year": 2023,
+      "effective_date": "2024-01-01"
+    },
+    {
+      "document": "2025_01.pdf",
+      "year": 2025,
+      "effective_date": null,
+      "effective_date_rule": "date of publication in the Official Gazette"
+
+    },
+    {
+      "document": "2025_02.pdf",
+      "year": 2025,
+      "effective_date": "2026-02-01"
+    },
+    {
+      "document": "2026_01.pdf",
+      "year": 2026,
+      "effective_date": "2026-07-01"
+    },
+    {
+      "document": "2026_02.pdf",
+      "year": 2026,
+      "effective_date": "2027-07-01"
+    },
+    {
+      "document": "2026_03.pdf",
+      "year": 2026,
+      "effective_date": null,
+       "effective_date_rule": "date of publication in the Official Gazette"
+    }
+  ]
+}

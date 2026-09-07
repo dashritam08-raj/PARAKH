@@ -1,0 +1,322 @@
+PARAKH AUTOMATIC AMENDMENT SCAN
+=================================================================
+
+FILE: 2011.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 10
+  - Rule 11
+  - Rule 12
+  - rule 19
+  - Rule 19
+  - Rule 2
+  - rule 27
+  - rule 29
+  - rule 5
+  - rule 6
+
+AMENDMENT KEYWORDS:
+  - in rule
+  - in sub-rule
+
+-----------------------------------------------------------------
+
+FILE: 2021.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 13
+  - rule 13, in sub-rule (5)
+  - rule 18
+  - rule 4
+  - rule 5
+  - rule 6
+  - rule 6, in sub-rule (1)
+
+AMENDMENT KEYWORDS:
+  - shall be substituted
+  - shall be inserted
+  - shall be omitted
+  - in rule
+  - in sub-rule
+  - in clause
+  - after sub-rule
+
+-----------------------------------------------------------------
+
+FILE: 2022_01.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 1
+  - rule 1, in sub-rule (2)
+  - rule 33
+  - rule 6
+
+AMENDMENT KEYWORDS:
+  - shall be substituted
+  - shall be omitted
+  - in rule
+  - in sub-rule
+
+-----------------------------------------------------------------
+
+FILE: 2022_02.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 6
+
+AMENDMENT KEYWORDS:
+  - shall be inserted
+  - in rule
+  - in sub-rule
+  - in clause
+
+-----------------------------------------------------------------
+
+FILE: 2022_03.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 26
+
+AMENDMENT KEYWORDS:
+  - shall be inserted
+  - in rule
+
+-----------------------------------------------------------------
+
+FILE: 2022_04.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 1
+  - rule 1, in sub-rule (2)
+
+AMENDMENT KEYWORDS:
+  - shall be substituted
+  - in rule
+  - in sub-rule
+
+-----------------------------------------------------------------
+
+FILE: 2022_05.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 1
+  - rule 1, in sub-rule
+(2)
+
+AMENDMENT KEYWORDS:
+  - shall be substituted
+  - in rule
+  - in sub-rule
+
+-----------------------------------------------------------------
+
+FILE: 2023_01.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 1
+  - rule 1, in sub-rule (2)
+
+AMENDMENT KEYWORDS:
+  - in rule
+  - in sub-rule
+
+-----------------------------------------------------------------
+
+FILE: 2023_02.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 1
+  - rule 1, in sub-rule (2)
+
+AMENDMENT KEYWORDS:
+  - in rule
+  - in sub-rule
+
+-----------------------------------------------------------------
+
+FILE: 2023_03.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 1
+  - rule 1, in sub-rule (2)
+
+AMENDMENT KEYWORDS:
+  - in rule
+  - in sub-rule
+
+-----------------------------------------------------------------
+
+FILE: 2023_04.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 6
+
+AMENDMENT KEYWORDS:
+  - shall be substituted
+  - in rule
+  - in sub-rule
+  - in clause
+
+-----------------------------------------------------------------
+
+FILE: 2023_05.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 1
+  - rule 1, in sub-rule (2)
+
+AMENDMENT KEYWORDS:
+  - in rule
+  - in sub-rule
+
+-----------------------------------------------------------------
+
+FILE: 2023_06.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 1
+  - rule 1, in sub-rule (2)
+
+AMENDMENT KEYWORDS:
+  - shall be substituted
+  - in rule
+  - in sub-rule
+
+-----------------------------------------------------------------
+
+FILE: 2023_07.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 1
+  - rule 1, in sub-rule (2)
+
+AMENDMENT KEYWORDS:
+  - in rule
+  - in sub-rule
+
+-----------------------------------------------------------------
+
+FILE: 2023_08.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 2
+  - rule 26
+  - rule 26, in clause (f)
+  - rule 6
+  - rule 6, in sub-rule (1)
+  - rule 6, in sub-rule (11)
+
+AMENDMENT KEYWORDS:
+  - shall be substituted
+  - shall be inserted
+  - in rule
+  - in sub-rule
+  - in clause
+  - following shall be inserted
+
+-----------------------------------------------------------------
+
+FILE: 2023_medical.txt
+STATUS: No obvious amendment pattern
+
+RULE REFERENCES:
+  - Rule 26
+  - Rule 6
+
+AMENDMENT KEYWORDS:
+
+-----------------------------------------------------------------
+
+FILE: 2023_Sop.txt
+STATUS: No obvious amendment pattern
+
+RULE REFERENCES:
+  - rule 6
+
+AMENDMENT KEYWORDS:
+
+-----------------------------------------------------------------
+
+FILE: 2025_01.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 33
+  - rule 7
+
+AMENDMENT KEYWORDS:
+  - shall be inserted
+  - in rule
+  - in sub-rule
+
+-----------------------------------------------------------------
+
+FILE: 2025_02.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 26
+  - rule 26 in clause (a)
+
+AMENDMENT KEYWORDS:
+  - shall be inserted
+  - in rule
+  - in clause
+
+-----------------------------------------------------------------
+
+FILE: 2026_01.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 6
+
+AMENDMENT KEYWORDS:
+  - shall be inserted
+  - in rule
+  - after sub-rule
+
+-----------------------------------------------------------------
+
+FILE: 2026_02.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 6
+
+AMENDMENT KEYWORDS:
+  - shall be substituted
+  - in rule
+
+-----------------------------------------------------------------
+
+FILE: 2026_03.txt
+STATUS: Possible amendment
+
+RULE REFERENCES:
+  - rule 27
+  - rule 4
+
+AMENDMENT KEYWORDS:
+  - shall be inserted
+  - in rule
+  - in sub-rule
+  - after sub-rule
+
+-----------------------------------------------------------------
+

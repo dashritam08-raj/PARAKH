@@ -1,0 +1,593 @@
+/* ============================================================
+   PARAKH — 3D SPLASH SCREEN
+============================================================ */
+
+.parakh-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #14284a 0%,
+      #091426 42%,
+      #040914 100%
+    );
+
+  color: #ffffff;
+
+  animation: splashFadeIn 0.6s ease forwards;
+}
+
+
+/* ============================================================
+   BACKGROUND GRID
+============================================================ */
+
+.splash-grid {
+  position: absolute;
+  inset: -30%;
+
+  opacity: 0.16;
+
+  background-image:
+    linear-gradient(
+      rgba(74, 137, 255, 0.18) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(74, 137, 255, 0.18) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+
+  transform:
+    perspective(600px)
+    rotateX(62deg)
+    translateY(20%);
+
+  animation:
+    gridMove 8s linear infinite;
+}
+
+
+/* ============================================================
+   AMBIENT GLOW
+============================================================ */
+
+.splash-glow {
+  position: absolute;
+
+  width: 380px;
+  height: 380px;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  opacity: 0.20;
+
+  pointer-events: none;
+}
+
+.splash-glow-one {
+  background: #1769ff;
+
+  transform:
+    translate(-260px, -100px);
+}
+
+.splash-glow-two {
+  background: #00b7ff;
+
+  transform:
+    translate(280px, 160px);
+}
+
+
+/* ============================================================
+   3D RINGS
+============================================================ */
+
+.splash-rings {
+  position: absolute;
+
+  width: 360px;
+  height: 360px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  perspective: 900px;
+}
+
+.splash-ring {
+  position: absolute;
+
+  border: 1px solid rgba(77, 153, 255, 0.38);
+
+  border-radius: 50%;
+
+  transform-style: preserve-3d;
+}
+
+.ring-one {
+  width: 290px;
+  height: 290px;
+
+  transform:
+    rotateX(68deg)
+    rotateZ(12deg);
+
+  animation:
+    ringRotateOne 8s linear infinite;
+}
+
+.ring-two {
+  width: 335px;
+  height: 335px;
+
+  border-color:
+    rgba(0, 214, 255, 0.25);
+
+  transform:
+    rotateY(66deg)
+    rotateZ(-18deg);
+
+  animation:
+    ringRotateTwo 10s linear infinite reverse;
+}
+
+.ring-three {
+  width: 245px;
+  height: 245px;
+
+  border-color:
+    rgba(68, 255, 175, 0.25);
+
+  transform:
+    rotateX(70deg);
+
+  animation:
+    ringRotateThree 6s linear infinite;
+}
+
+
+/* ============================================================
+   LOGO
+============================================================ */
+
+.splash-logo-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: 150px;
+  height: 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  background: #03060c;
+
+  box-shadow:
+    0 0 0 1px rgba(86, 151, 255, 0.35),
+    0 0 40px rgba(35, 113, 255, 0.25),
+    0 25px 70px rgba(0, 0, 0, 0.40);
+
+  transform:
+    perspective(700px)
+    rotateX(3deg);
+
+  animation:
+    logoFloat 3s ease-in-out infinite;
+}
+
+.splash-logo {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* ============================================================
+   SCANNING BEAM
+============================================================ */
+
+.splash-scan-line {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  height: 2px;
+
+  z-index: 3;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #2f9bff,
+      #ffffff,
+      #2f9bff,
+      transparent
+    );
+
+  box-shadow:
+    0 0 15px #2996ff;
+
+  animation:
+    scanLogo 2.2s ease-in-out infinite;
+}
+
+
+/* ============================================================
+   BRAND
+============================================================ */
+
+.splash-brand {
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: 27px;
+
+  text-align: center;
+}
+
+.splash-brand h1 {
+  margin: 0;
+
+  font-size: 38px;
+  font-weight: 900;
+
+  letter-spacing: 5px;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 0 25px rgba(70, 150, 255, 0.35);
+}
+
+.splash-brand p {
+  margin: 7px 0 0;
+
+  color: #8da8ca;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+}
+
+
+/* ============================================================
+   STATUS
+============================================================ */
+
+.splash-status {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 28px;
+
+  color: #9bb0ca;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.3px;
+}
+
+.status-pulse {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #38e88a;
+
+  box-shadow:
+    0 0 0 4px rgba(56, 232, 138, 0.10),
+    0 0 14px rgba(56, 232, 138, 0.65);
+
+  animation:
+    statusPulse 1.4s ease-in-out infinite;
+}
+
+
+/* ============================================================
+   PROGRESS
+============================================================ */
+
+.splash-progress {
+  position: relative;
+
+  z-index: 3;
+
+  width: 220px;
+  height: 3px;
+
+  margin-top: 15px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.splash-progress-bar {
+  height: 100%;
+  width: 0%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #28a8ff,
+      #38e88a
+    );
+
+  box-shadow:
+    0 0 12px rgba(40, 168, 255, 0.65);
+
+  animation:
+    splashProgress 1.8s ease-out forwards;
+}
+
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+.splash-footer {
+  position: absolute;
+
+  bottom: 28px;
+
+  display: flex;
+  gap: 9px;
+
+  color: #536984;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+
+@keyframes splashFadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes gridMove {
+
+  from {
+    transform:
+      perspective(600px)
+      rotateX(62deg)
+      translateY(0);
+  }
+
+  to {
+    transform:
+      perspective(600px)
+      rotateX(62deg)
+      translateY(48px);
+  }
+
+}
+
+
+@keyframes logoFloat {
+
+  0%,
+  100% {
+    transform:
+      perspective(700px)
+      rotateX(3deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      perspective(700px)
+      rotateX(3deg)
+      translateY(-8px);
+  }
+
+}
+
+
+@keyframes scanLogo {
+
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    top: calc(100% - 2px);
+    opacity: 0;
+  }
+
+}
+
+
+@keyframes ringRotateOne {
+
+  from {
+    transform:
+      rotateX(68deg)
+      rotateZ(0deg);
+  }
+
+  to {
+    transform:
+      rotateX(68deg)
+      rotateZ(360deg);
+  }
+
+}
+
+
+@keyframes ringRotateTwo {
+
+  from {
+    transform:
+      rotateY(66deg)
+      rotateZ(0deg);
+  }
+
+  to {
+    transform:
+      rotateY(66deg)
+      rotateZ(360deg);
+  }
+
+}
+
+
+@keyframes ringRotateThree {
+
+  from {
+    transform:
+      rotateX(70deg)
+      rotateZ(0deg);
+  }
+
+  to {
+    transform:
+      rotateX(70deg)
+      rotateZ(-360deg);
+  }
+
+}
+
+
+@keyframes statusPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes splashProgress {
+
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .parakh-splash *,
+  .parakh-splash {
+    animation: none !important;
+  }
+
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 600px) {
+
+  .splash-logo-container {
+    width: 125px;
+    height: 125px;
+
+    border-radius: 25px;
+  }
+
+  .splash-rings {
+    transform: scale(0.78);
+  }
+
+  .splash-brand h1 {
+    font-size: 31px;
+  }
+
+  .splash-brand p {
+    font-size: 7px;
+  }
+
+  .splash-footer {
+    bottom: 20px;
+
+    font-size: 7px;
+  }
+
+}

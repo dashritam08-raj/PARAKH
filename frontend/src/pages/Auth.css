@@ -1,0 +1,1137 @@
+/* ============================================================
+   PARAKH AUTHENTICATION
+   Futuristic Inspector Interface
+============================================================ */
+
+.auth-page {
+  position: relative;
+
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(40, 100, 232, 0.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(0, 180, 255, 0.08),
+      transparent 32%
+    ),
+    var(--parakh-bg);
+
+  color: var(--parakh-text);
+}
+
+
+/* ============================================================
+   BACKGROUND GRID
+============================================================ */
+
+.auth-page::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.25;
+
+  background-image:
+    linear-gradient(
+      rgba(40, 100, 232, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(40, 100, 232, 0.07) 1px,
+      transparent 1px
+    );
+
+  background-size: 45px 45px;
+
+  mask-image:
+    radial-gradient(
+      ellipse at center,
+      black 20%,
+      transparent 75%
+    );
+}
+
+
+/* ============================================================
+   AUTH LAYOUT
+============================================================ */
+
+.auth-layout {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1050px;
+
+  min-height: 610px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(380px, 430px);
+
+  gap: 35px;
+
+  align-items: center;
+}
+
+
+/* ============================================================
+   LEFT VISUAL PANEL
+============================================================ */
+
+.auth-visual {
+  position: relative;
+
+  min-height: 540px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(30, 75, 140, 0.30),
+      rgba(5, 12, 24, 0.96) 70%
+    );
+
+  border: 1px solid
+    rgba(77, 141, 240, 0.18);
+
+  box-shadow:
+    0 25px 80px
+    rgba(0, 0, 0, 0.14);
+}
+
+
+/* ============================================================
+   VISUAL GRID
+============================================================ */
+
+.auth-visual::before {
+  content: "";
+
+  position: absolute;
+  inset: -50%;
+
+  background-image:
+    linear-gradient(
+      rgba(69, 140, 255, 0.10) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(69, 140, 255, 0.10) 1px,
+      transparent 1px
+    );
+
+  background-size: 40px 40px;
+
+  transform:
+    perspective(500px)
+    rotateX(60deg);
+
+  opacity: 0.4;
+
+  animation:
+    authGridMove 8s linear infinite;
+}
+
+
+/* ============================================================
+   VISUAL GLOW
+============================================================ */
+
+.auth-visual::after {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(35, 119, 255, 0.18);
+
+  filter: blur(80px);
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   ORBIT RINGS
+============================================================ */
+
+.auth-orbit {
+  position: absolute;
+
+  left: 50%;
+  top: 43%;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(75, 151, 255, 0.30);
+
+  transform-style: preserve-3d;
+
+  pointer-events: none;
+}
+
+.orbit-one {
+  width: 300px;
+  height: 300px;
+
+  margin-left: -150px;
+  margin-top: -150px;
+
+  transform:
+    rotateX(68deg);
+
+  animation:
+    authOrbitOne 8s linear infinite;
+}
+
+.orbit-two {
+  width: 350px;
+  height: 350px;
+
+  margin-left: -175px;
+  margin-top: -175px;
+
+  border-color:
+    rgba(0, 207, 255, 0.20);
+
+  transform:
+    rotateY(65deg);
+
+  animation:
+    authOrbitTwo 10s linear infinite reverse;
+}
+
+
+/* ============================================================
+   LOGO
+============================================================ */
+
+.auth-visual-logo {
+  position: relative;
+  z-index: 3;
+
+  width: 125px;
+  height: 125px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 26px;
+
+  background: #03060c;
+
+  border: 1px solid
+    rgba(77, 151, 255, 0.40);
+
+  box-shadow:
+    0 0 0 7px
+      rgba(48, 125, 255, 0.04),
+
+    0 0 45px
+      rgba(36, 120, 255, 0.24),
+
+    0 25px 50px
+      rgba(0, 0, 0, 0.40);
+
+  transform:
+    perspective(700px)
+    rotateX(4deg);
+
+  animation:
+    authLogoFloat 3.5s ease-in-out infinite;
+}
+
+.auth-visual-logo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* ============================================================
+   BRAND
+============================================================ */
+
+.auth-visual-title {
+  position: relative;
+  z-index: 3;
+
+  margin-top: 25px;
+
+  color: #ffffff;
+
+  font-size: 32px;
+  font-weight: 900;
+
+  letter-spacing: 5px;
+
+  text-shadow:
+    0 0 25px
+    rgba(72, 151, 255, 0.35);
+}
+
+.auth-visual-subtitle {
+  position: relative;
+  z-index: 3;
+
+  margin-top: 7px;
+
+  color: #8da8c8;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 2.4px;
+}
+
+
+/* ============================================================
+   ENGINE STATUS
+============================================================ */
+
+.auth-engine-status {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 27px;
+
+  padding: 8px 12px;
+
+  border: 1px solid
+    rgba(69, 228, 145, 0.14);
+
+  border-radius: 999px;
+
+  background:
+    rgba(57, 232, 139, 0.05);
+
+  color: #92ad9e;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.auth-status-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #3ee894;
+
+  box-shadow:
+    0 0 10px
+    rgba(62, 232, 148, 0.8);
+
+  animation:
+    authStatusPulse 1.4s ease-in-out infinite;
+}
+
+
+/* ============================================================
+   PROCESS FLOW
+============================================================ */
+
+.auth-process {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 26px;
+
+  color: #607894;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.auth-process b {
+  color: #3f82ed;
+
+  font-size: 10px;
+}
+
+
+/* ============================================================
+   AUTH CARD
+============================================================ */
+
+.auth-card {
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+
+  padding: 36px;
+
+  box-sizing: border-box;
+
+  background:
+    var(--parakh-surface);
+
+  border: 1px solid
+    var(--parakh-border);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 25px 70px
+    rgba(16, 33, 63, 0.10);
+
+  animation:
+    authCardAppear 0.55s ease-out;
+}
+
+
+/* ============================================================
+   BRAND
+============================================================ */
+
+.auth-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 27px;
+}
+
+.auth-logo {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+
+  border-radius: 13px;
+
+  background: #03060c;
+
+  border: 1px solid
+    rgba(40, 100, 232, 0.25);
+
+  box-shadow:
+    0 8px 20px
+    rgba(40, 100, 232, 0.12);
+}
+
+.auth-logo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.auth-brand-text {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.auth-brand-text h1 {
+  margin: 0;
+
+  color: var(--parakh-text);
+
+  font-size: 20px;
+  font-weight: 900;
+
+  letter-spacing: 0.5px;
+}
+
+.auth-brand-text span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--parakh-text-secondary);
+
+  font-size: 10px;
+}
+
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.auth-header {
+  margin-bottom: 23px;
+}
+
+.auth-header h2 {
+  margin: 0;
+
+  color: var(--parakh-text);
+
+  font-size: 25px;
+  font-weight: 800;
+
+  letter-spacing: -0.3px;
+}
+
+.auth-header p {
+  margin: 7px 0 0;
+
+  color: var(--parakh-text-secondary);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   ERROR
+============================================================ */
+
+.auth-error {
+  margin-bottom: 16px;
+
+  padding: 11px 13px;
+
+  border: 1px solid
+    rgba(220, 38, 38, 0.20);
+
+  border-radius: 9px;
+
+  background:
+    rgba(220, 38, 38, 0.06);
+
+  color: #dc3d47;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   FORM
+============================================================ */
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--parakh-text-secondary);
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.form-group input {
+  width: 100%;
+  height: 46px;
+
+  padding: 0 13px;
+
+  box-sizing: border-box;
+
+  border: 1px solid
+    var(--parakh-border);
+
+  border-radius: 9px;
+
+  outline: none;
+
+  background:
+    var(--parakh-surface-soft);
+
+  color: var(--parakh-text);
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.form-group input::placeholder {
+  color: var(--parakh-text-muted);
+}
+
+.form-group input:focus {
+  border-color:
+    var(--parakh-primary);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(40, 100, 232, 0.10);
+}
+
+
+/* ============================================================
+   SUBMIT
+============================================================ */
+
+.auth-submit {
+  width: 100%;
+  height: 47px;
+
+  margin-top: 4px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2864e8,
+      #3579f2
+    );
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px
+    rgba(40, 100, 232, 0.20);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    filter 0.18s ease;
+}
+
+.auth-submit:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 12px 25px
+    rgba(40, 100, 232, 0.28);
+
+  filter: brightness(1.04);
+}
+
+.auth-submit:active {
+  transform:
+    translateY(0);
+}
+
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+.auth-footer {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  margin-top: 22px;
+
+  color:
+    var(--parakh-text-secondary);
+
+  font-size: 12px;
+}
+
+.auth-footer a {
+  color:
+    var(--parakh-primary);
+
+  font-weight: 800;
+
+  text-decoration: none;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+
+@keyframes authCardAppear {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(15px)
+      scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+@keyframes authLogoFloat {
+
+  0%,
+  100% {
+    transform:
+      perspective(700px)
+      rotateX(4deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      perspective(700px)
+      rotateX(4deg)
+      translateY(-7px);
+  }
+
+}
+
+
+@keyframes authOrbitOne {
+
+  from {
+    transform:
+      rotateX(68deg)
+      rotateZ(0deg);
+  }
+
+  to {
+    transform:
+      rotateX(68deg)
+      rotateZ(360deg);
+  }
+
+}
+
+
+@keyframes authOrbitTwo {
+
+  from {
+    transform:
+      rotateY(65deg)
+      rotateZ(0deg);
+  }
+
+  to {
+    transform:
+      rotateY(65deg)
+      rotateZ(360deg);
+  }
+
+}
+
+
+@keyframes authGridMove {
+
+  from {
+    transform:
+      perspective(500px)
+      rotateX(60deg)
+      translateY(0);
+  }
+
+  to {
+    transform:
+      perspective(500px)
+      rotateX(60deg)
+      translateY(40px);
+  }
+
+}
+
+
+@keyframes authStatusPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
+
+}
+
+
+/* ============================================================
+   DARK MODE
+============================================================ */
+
+html[data-theme="dark"] .auth-page {
+  background:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(40, 100, 232, 0.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(0, 180, 255, 0.07),
+      transparent 32%
+    ),
+    #080f1c;
+}
+
+html[data-theme="dark"] .auth-card {
+  background:
+    #121c2c;
+
+  border-color:
+    #29384f;
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.30);
+}
+
+html[data-theme="dark"] .form-group input {
+  background:
+    #19263a;
+
+  border-color:
+    #2b3b53;
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 850px) {
+
+  .auth-layout {
+    max-width: 470px;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .auth-visual {
+    min-height: 300px;
+
+    border-radius: 22px;
+  }
+
+  .auth-visual-logo {
+    width: 90px;
+    height: 90px;
+
+    border-radius: 20px;
+  }
+
+  .auth-visual-title {
+    margin-top: 15px;
+
+    font-size: 25px;
+  }
+
+  .auth-engine-status {
+    margin-top: 16px;
+  }
+
+  .auth-process {
+    margin-top: 14px;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .auth-page {
+    padding: 15px;
+  }
+
+  .auth-layout {
+    width: 100%;
+  }
+
+  .auth-visual {
+    display: none;
+  }
+
+  .auth-card {
+    padding: 26px 20px;
+
+    border-radius: 17px;
+  }
+
+  .auth-header h2 {
+    font-size: 22px;
+  }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .auth-page *,
+  .auth-page {
+    animation: none !important;
+    transition: none !important;
+  }
+
+}
+
+
+/* ============================================================
+   PARAKH — EXTRA 3D AUTH POLISH
+   Added on top of the original 959-line stylesheet.
+   Does not remove or replace existing rules.
+============================================================ */
+
+/* Ambient 3D light */
+.auth-page::after {
+  animation: authAmbientFloat 10s ease-in-out infinite;
+}
+
+/* Make the existing visual panel feel more dimensional */
+.auth-visual {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.auth-visual-logo {
+  transform-style: preserve-3d;
+  animation:
+    authLogoFloat 3.5s ease-in-out infinite,
+    authLogoGlow 3s ease-in-out infinite;
+}
+
+/* Extra depth around the existing orbit system */
+.auth-orbit::before {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  border: 1px dashed rgba(78, 157, 255, 0.14);
+  transform: rotateX(55deg);
+}
+
+.orbit-two::before {
+  border-color: rgba(0, 207, 255, 0.12);
+}
+
+/* Small floating scanner points */
+.auth-visual::after {
+  animation: authCoreGlow 4s ease-in-out infinite;
+}
+
+/* Premium card hover depth */
+.auth-card {
+  transform-style: preserve-3d;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.auth-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 30px 80px rgba(16, 33, 63, 0.13);
+}
+
+/* Logo inside the form gets a subtle depth effect */
+.auth-logo {
+  transform-style: preserve-3d;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.auth-logo:hover {
+  transform: translateY(-2px) rotateX(4deg) rotateY(-5deg);
+  box-shadow:
+    0 12px 26px rgba(40, 100, 232, 0.22);
+}
+
+/* Inputs get a very subtle glass/depth interaction */
+.form-group input:hover {
+  border-color: var(--parakh-primary);
+}
+
+.auth-submit {
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-submit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255,255,255,.22),
+    transparent
+  );
+  transform: skewX(-18deg);
+  transition: left .6s ease;
+  pointer-events: none;
+}
+
+.auth-submit:hover::before {
+  left: 140%;
+}
+
+/* Keep the futuristic visual balanced on smaller screens */
+@media (max-width: 850px) {
+  .auth-card:hover {
+    transform: none;
+  }
+
+  .auth-visual-logo {
+    animation-duration: 4s;
+  }
+}
+
+@media (max-width: 520px) {
+  .auth-logo:hover {
+    transform: none;
+  }
+}
+
+/* Dark-mode depth */
+html[data-theme="dark"] .auth-card:hover {
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.42);
+}
+
+html[data-theme="dark"] .auth-logo:hover {
+  box-shadow:
+    0 12px 28px rgba(40, 100, 232, 0.28);
+}
+
+/* New animations */
+@keyframes authAmbientFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-25px, 20px, 0) scale(1.06);
+  }
+}
+
+@keyframes authLogoGlow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.08);
+  }
+}
+
+@keyframes authCoreGlow {
+  0%, 100% {
+    opacity: .9;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-card,
+  .auth-logo,
+  .auth-visual-logo {
+    transform: none !important;
+  }
+
+  .auth-page::after,
+  .auth-visual::after {
+    animation: none !important;
+  }
+}

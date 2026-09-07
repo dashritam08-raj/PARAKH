@@ -1,0 +1,1854 @@
+
+   /* ============================================================
+   PARAKH - INSPECTION PAGE
+   Professional Inspector UI
+============================================================ */
+
+.inspection-page {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 32px 38px 60px;
+  background: #f6f8fc;
+  color: #10213f;
+}
+
+
+/* ============================================================
+   PAGE HEADER
+============================================================ */
+
+.inspection-page .page-header {
+  margin-bottom: 28px;
+}
+
+.inspection-page .page-header h1 {
+  margin: 0;
+  color: #10213f;
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.inspection-page .page-header p {
+  margin: 8px 0 0;
+  color: #70809a;
+  font-size: 15px;
+}
+
+
+/* ============================================================
+   MAIN WORKSPACE
+============================================================ */
+
+.inspection-page .inspection-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(300px, 0.8fr);
+  gap: 22px;
+  align-items: start;
+}
+
+
+/* ============================================================
+   UPLOAD CARD
+============================================================ */
+
+.inspection-page .upload-card {
+  min-width: 0;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(16, 33, 63, 0.05);
+}
+
+.inspection-page .upload-card h2 {
+  margin: 0 0 18px;
+  color: #10213f;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+
+/* ============================================================
+   UPLOAD AREA
+============================================================ */
+
+.inspection-page .upload-area {
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px;
+  border: 2px dashed #cdd8e8;
+  border-radius: 15px;
+  background: #f9fbfe;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.inspection-page .upload-area:hover {
+  border-color: #2864e8;
+  background: #f3f7ff;
+}
+
+.inspection-page .upload-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 16px;
+  border-radius: 14px;
+  background: #eaf1ff;
+  color: #2864e8;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.inspection-page .upload-area h3 {
+  margin: 0;
+  color: #172946;
+  font-size: 18px;
+}
+
+.inspection-page .upload-area p {
+  margin: 7px 0 18px;
+  color: #8794a8;
+  font-size: 13px;
+}
+
+.inspection-page .upload-button {
+  padding: 10px 17px;
+  border-radius: 9px;
+  background: #2864e8;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* ============================================================
+   IMAGE PREVIEW
+============================================================ */
+
+.inspection-page .image-preview {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+
+.inspection-page .image-preview img {
+  display: block;
+  width: 100%;
+  max-width: 850px;
+  max-height: 560px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+
+/* ============================================================
+   SECONDARY BUTTON
+============================================================ */
+
+.inspection-page .secondary-button {
+  height: 40px;
+  padding: 0 16px;
+  border: 1px solid #d5deea;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #425570;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.inspection-page .secondary-button:hover {
+  background: #f2f5f9;
+}
+
+
+/* ============================================================
+   RIGHT INFORMATION PANEL
+============================================================ */
+
+.inspection-page .inspection-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inspection-page .info-card {
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(16, 33, 63, 0.04);
+}
+
+.inspection-page .info-card h2 {
+  margin: 0 0 20px;
+  color: #10213f;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.inspection-page .info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 13px 0;
+  border-top: 1px solid #edf1f6;
+}
+
+.inspection-page .info-row:first-of-type {
+  border-top: none;
+}
+
+.inspection-page .info-row span {
+  color: #78879c;
+  font-size: 13px;
+}
+
+.inspection-page .info-row strong {
+  color: #1a2d4c;
+  font-size: 13px;
+  text-align: right;
+}
+
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+
+.inspection-page .analyze-button,
+.inspection-page .report-button {
+  width: 100%;
+  min-height: 48px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease,
+    background 0.15s ease;
+}
+
+.inspection-page .analyze-button {
+  background: #2864e8;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(40, 100, 232, 0.18);
+}
+
+.inspection-page .analyze-button:hover:not(:disabled) {
+  background: #1f55cd;
+  transform: translateY(-1px);
+}
+
+.inspection-page .report-button {
+  background: #10213f;
+  color: #ffffff;
+}
+
+.inspection-page .report-button:hover:not(:disabled) {
+  background: #172d50;
+  transform: translateY(-1px);
+}
+
+.inspection-page button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* ============================================================
+   ERROR
+============================================================ */
+
+.inspection-page .error-message {
+  padding: 13px 15px;
+  border: 1px solid #f0c9cd;
+  border-radius: 9px;
+  background: #fff5f5;
+  color: #b32d38;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   ANALYSIS PROGRESS
+============================================================ */
+
+.inspection-page .analysis-progress {
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #dfe6f0;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(16, 33, 63, 0.04);
+}
+
+.inspection-page .analysis-progress-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.inspection-page .analysis-progress-header h3 {
+  margin: 0;
+  color: #10213f;
+  font-size: 17px;
+}
+
+.inspection-page .analysis-progress-header p {
+  margin: 6px 0 0;
+  color: #7b899d;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.inspection-page .analysis-spinner {
+  color: #2864e8;
+  font-size: 25px;
+  animation: inspection-spin 1s linear infinite;
+}
+
+@keyframes inspection-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ============================================================
+   ANALYSIS STEPS
+============================================================ */
+
+.inspection-page .analysis-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inspection-page .analysis-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f7f9fc;
+}
+
+.inspection-page .analysis-step > span {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #e4e9f1;
+  color: #718098;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.inspection-page .analysis-step.active {
+  background: #f0f5ff;
+}
+
+.inspection-page .analysis-step.active > span {
+  background: #2864e8;
+  color: #ffffff;
+}
+
+.inspection-page .analysis-step strong {
+  display: block;
+  color: #253956;
+  font-size: 12px;
+}
+
+.inspection-page .analysis-step small {
+  display: block;
+  margin-top: 3px;
+  color: #8491a4;
+  font-size: 10px;
+}
+
+.inspection-page .analysis-progress-bar {
+  height: 7px;
+  overflow: hidden;
+  margin-top: 20px;
+  border-radius: 20px;
+  background: #e7edf5;
+}
+
+.inspection-page .analysis-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: #2864e8;
+  transition: width 0.4s ease;
+}
+
+.inspection-page .analysis-progress-percent {
+  margin-top: 7px;
+  color: #6f7e94;
+  font-size: 10px;
+  text-align: right;
+}
+
+
+/* ============================================================
+   ANALYSIS RESULT
+============================================================ */
+
+.inspection-page .analysis-result {
+  margin-top: 24px;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #dfe6ef;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(16, 33, 63, 0.05);
+}
+
+
+/* ============================================================
+   RESULT HEADER
+============================================================ */
+
+.inspection-page .result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #e8edf3;
+}
+
+.inspection-page .result-header h2 {
+  margin: 0;
+  color: #10213f;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.inspection-page .result-header p {
+  margin: 7px 0 0;
+  color: #7b899d;
+  font-size: 13px;
+}
+
+
+/* ============================================================
+   STATUS BADGES
+============================================================ */
+
+.inspection-page .inspection-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.inspection-page .inspection-status.pass {
+  background: #eaf9f1;
+  color: #138a53;
+}
+
+.inspection-page .inspection-status.fail {
+  background: #fff0f1;
+  color: #d02f3d;
+}
+
+.inspection-page .inspection-status.review {
+  background: #fff6e6;
+  color: #b96d00;
+}
+
+.inspection-page .inspection-status.pending {
+  background: #edf1f5;
+  color: #66758b;
+}
+
+
+/* ============================================================
+   SCORE AREA
+============================================================ */
+
+.inspection-page .inspection-score-section {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(4, 1fr);
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.inspection-page .main-score,
+.inspection-page .score-stat {
+  min-height: 105px;
+  padding: 18px;
+  border: 1px solid #e3e8ef;
+  border-radius: 12px;
+  background: #f9fbfd;
+  box-sizing: border-box;
+}
+
+.inspection-page .main-score {
+  background: #f1f6ff;
+  border-color: #d7e3fa;
+}
+
+.inspection-page .main-score span,
+.inspection-page .score-stat span {
+  display: block;
+  color: #77869c;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.inspection-page .main-score strong {
+  display: block;
+  margin-top: 5px;
+  color: #2864e8;
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.inspection-page .main-score small {
+  display: block;
+  margin-top: 5px;
+  color: #8491a5;
+  font-size: 10px;
+}
+
+.inspection-page .score-stat strong {
+  display: block;
+  margin-top: 9px;
+  color: #172946;
+  font-size: 24px;
+}
+
+
+/* ============================================================
+   RESULT SECTIONS
+============================================================ */
+
+.inspection-page .result-section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e8edf3;
+}
+
+.inspection-page .section-heading {
+  margin-bottom: 18px;
+}
+
+.inspection-page .section-heading h3 {
+  margin: 0;
+  color: #172946;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.inspection-page .section-heading span {
+  display: block;
+  margin-top: 5px;
+  color: #7d8ba0;
+  font-size: 12px;
+}
+
+
+/* ============================================================
+   PRODUCT INFORMATION
+============================================================ */
+
+.inspection-page .product-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.inspection-page .product-details > div {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #e2e8ef;
+  border-radius: 11px;
+  background: #fafbfd;
+}
+
+.inspection-page .product-details span {
+  display: block;
+  margin-bottom: 7px;
+  color: #7d8ba0;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.inspection-page .product-details strong {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #172946;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+
+/* ============================================================
+   COMPLIANCE LIST
+============================================================ */
+
+.inspection-page .compliance-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inspection-page .compliance-item {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: 15px;
+  align-items: start;
+  padding: 18px;
+  border: 1px solid #e1e7ef;
+  border-radius: 13px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.inspection-page .compliance-item:hover {
+  border-color: #ccd8e8;
+  background: #fbfcfe;
+}
+
+.inspection-page .compliance-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #edf3ff;
+  color: #2864e8;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.inspection-page .compliance-content {
+  min-width: 0;
+}
+
+.inspection-page .compliance-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.inspection-page .compliance-title strong {
+  color: #172946;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.inspection-page .compliance-title span {
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: #f0f3f7;
+  color: #718098;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.inspection-page .compliance-content p {
+  margin: 7px 0;
+  color: #63738b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.inspection-page .compliance-reason {
+  margin-top: 7px;
+  color: #52637b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.inspection-page .confidence-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.inspection-page .confidence-row span {
+  color: #8996a8;
+  font-size: 10px;
+}
+
+.inspection-page .confidence-row strong {
+  color: #40526d;
+  font-size: 11px;
+}
+
+
+/* ============================================================
+   EVIDENCE
+============================================================ */
+
+.inspection-page .evidence-box,
+.inspection-page .review-box {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 9px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.inspection-page .evidence-box {
+  border: 1px solid #dbe5f2;
+  background: #f6f9fd;
+  color: #53657e;
+}
+
+.inspection-page .evidence-box strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #344963;
+}
+
+.inspection-page .review-box {
+  border: 1px solid #f0dfb7;
+  background: #fffaf0;
+  color: #75623d;
+}
+
+.inspection-page .review-box strong {
+  color: #a46a00;
+}
+
+
+/* ============================================================
+   FINAL SUMMARY
+============================================================ */
+
+.inspection-page .final-summary {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.inspection-page .final-summary > div {
+  padding: 16px;
+  border: 1px solid #e2e8ef;
+  border-radius: 10px;
+  background: #fafbfd;
+}
+
+.inspection-page .final-summary span {
+  display: block;
+  color: #7e8da1;
+  font-size: 10px;
+}
+
+.inspection-page .final-summary strong {
+  display: block;
+  margin-top: 7px;
+  color: #172946;
+  font-size: 22px;
+}
+
+
+/* ============================================================
+   INSPECTION NOTE
+============================================================ */
+
+.inspection-page .inspection-note {
+  margin-top: 14px;
+  padding: 16px;
+  border-left: 4px solid #2864e8;
+  border-radius: 8px;
+  background: #f4f7fc;
+}
+
+.inspection-page .inspection-note strong {
+  color: #172946;
+  font-size: 12px;
+}
+
+.inspection-page .inspection-note p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   INSPECTOR DECISION
+============================================================ */
+
+.inspection-page .inspector-decision-section {
+  margin-top: 28px;
+  padding: 24px;
+  border: 1px solid #dfe6ef;
+  border-radius: 15px;
+  background: #fbfcfe;
+}
+
+.inspection-page .inspector-decision-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.inspection-page .decision-kicker {
+  color: #7a889e !important;
+  font-size: 10px !important;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.inspection-page .inspector-remarks {
+  margin-top: 18px;
+}
+
+.inspection-page .inspector-remarks label {
+  display: block;
+  margin-bottom: 7px;
+  color: #263a57;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.inspection-page .inspector-remarks textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  resize: vertical;
+  border: 1px solid #d6dfeb;
+  border-radius: 9px;
+  outline: none;
+  background: #ffffff;
+  color: #243854;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.inspection-page .inspector-remarks textarea:focus {
+  border-color: #2864e8;
+  box-shadow: 0 0 0 3px rgba(40, 100, 232, 0.08);
+}
+
+.inspection-page .inspector-remarks small {
+  display: block;
+  margin-top: 6px;
+  color: #8996a8;
+  font-size: 10px;
+}
+
+
+/* ============================================================
+   DECISION BUTTONS
+============================================================ */
+
+.inspection-page .decision-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.inspection-page .decision-button {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 72px;
+  padding: 13px 15px;
+  border-radius: 11px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.inspection-page .decision-button-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 9px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.inspection-page .decision-button strong {
+  display: block;
+  font-size: 13px;
+}
+
+.inspection-page .decision-button small {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.inspection-page .decision-compliant {
+  border: 1px solid #bfe3cf;
+  background: #f2fbf6;
+  color: #137c4c;
+}
+
+.inspection-page .decision-compliant .decision-button-icon {
+  background: #dff5e8;
+  color: #138a53;
+}
+
+.inspection-page .decision-compliant small {
+  color: #618371;
+}
+
+.inspection-page .decision-non-compliant {
+  border: 1px solid #f0c9cd;
+  background: #fff6f6;
+  color: #c52f3b;
+}
+
+.inspection-page .decision-non-compliant .decision-button-icon {
+  background: #ffe3e5;
+  color: #d02f3d;
+}
+
+.inspection-page .decision-non-compliant small {
+  color: #8d6a6e;
+}
+
+.inspection-page .decision-saving {
+  margin-top: 12px;
+  color: #64748b;
+  font-size: 11px;
+}
+
+
+/* ============================================================
+   SUCCESS MESSAGE
+============================================================ */
+
+.inspection-page .decision-success {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid #bfe3cf;
+  border-radius: 10px;
+  background: #f1fbf5;
+}
+
+.inspection-page .decision-success-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #d9f4e4;
+  color: #138a53;
+  font-weight: 800;
+}
+
+.inspection-page .decision-success strong {
+  color: #137c4c;
+  font-size: 13px;
+}
+
+.inspection-page .decision-success p {
+  margin: 4px 0 0;
+  color: #618371;
+  font-size: 11px;
+}
+
+
+/* ============================================================
+   OCR
+============================================================ */
+
+.inspection-page .ocr-section {
+  border: 1px solid #e0e7ef;
+  border-radius: 10px;
+  background: #fafbfd;
+}
+
+.inspection-page .ocr-section summary {
+  padding: 14px 16px;
+  color: #344963;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.inspection-page .ocr-section pre {
+  max-height: 300px;
+  overflow: auto;
+  margin: 0;
+  padding: 16px;
+  border-top: 1px solid #e4e9ef;
+  color: #5c6d84;
+  font-family: monospace;
+  font-size: 11px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+
+/* ============================================================
+   REPORT ACTION
+============================================================ */
+
+.inspection-page .report-action-section {
+  margin-top: 25px;
+  padding: 20px;
+  border: 1px solid #dce5f0;
+  border-radius: 13px;
+  background: #f7f9fc;
+}
+
+.inspection-page .report-action-section p {
+  margin: 8px 0 0;
+  color: #8491a4;
+  font-size: 10px;
+  text-align: center;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 1200px) {
+
+  .inspection-page .inspection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inspection-page .inspection-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .inspection-page .analysis-progress,
+  .inspection-page .error-message {
+    grid-column: 1 / -1;
+  }
+
+  .inspection-page .analyze-button,
+  .inspection-page .report-button {
+    min-height: 48px;
+  }
+
+  .inspection-page .inspection-score-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .inspection-page .main-score {
+    grid-column: span 3;
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .inspection-page {
+    padding: 24px 18px 40px;
+  }
+
+  .inspection-page .page-header h1 {
+    font-size: 28px;
+  }
+
+  .inspection-page .inspection-info {
+    display: flex;
+  }
+
+  .inspection-page .product-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .inspection-page .final-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .inspection-page .decision-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .inspection-page .inspector-decision-heading {
+    flex-direction: column;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .inspection-page {
+    padding: 18px 12px 30px;
+  }
+
+  .inspection-page .upload-card,
+  .inspection-page .analysis-result {
+    padding: 18px;
+  }
+
+  .inspection-page .upload-area {
+    min-height: 300px;
+  }
+
+  .inspection-page .product-details {
+    grid-template-columns: 1fr;
+  }
+
+  .inspection-page .inspection-score-section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .inspection-page .main-score {
+    grid-column: span 2;
+  }
+
+  .inspection-page .final-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .inspection-page .compliance-item {
+    grid-template-columns: 36px minmax(0, 1fr);
+  }
+
+  .inspection-page .compliance-item > .inspection-status {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .inspection-page .result-header {
+    flex-direction: column;
+  }
+
+}
+/* ============================================================
+   PARAKH - INSPECTION PAGE THEME FIX
+   Visual only — does not affect inspection functionality
+============================================================ */
+
+/* Main page */
+.inspection-page {
+  background: var(--parakh-bg) !important;
+  color: var(--parakh-text) !important;
+}
+
+
+/* Page headings */
+.inspection-page h1,
+.inspection-page h2,
+.inspection-page h3,
+.inspection-page h4 {
+  color: var(--parakh-text) !important;
+}
+
+
+/* Secondary text */
+.inspection-page p,
+.inspection-page span,
+.inspection-page label {
+  color: var(--parakh-text-secondary);
+}
+
+
+/* Main cards */
+.inspection-card,
+.inspection-panel,
+.inspection-upload-card,
+.inspection-details-card,
+.upload-card,
+.details-card {
+  background: var(--parakh-surface) !important;
+  color: var(--parakh-text) !important;
+  border-color: var(--parakh-border) !important;
+}
+
+
+/* Upload area */
+.upload-area,
+.upload-zone,
+.drop-zone {
+  background: var(--parakh-surface-soft) !important;
+  color: var(--parakh-text) !important;
+  border-color: var(--parakh-primary) !important;
+}
+
+
+/* Upload heading */
+.upload-area h2,
+.upload-area h3,
+.upload-zone h2,
+.upload-zone h3,
+.drop-zone h2,
+.drop-zone h3 {
+  color: var(--parakh-text) !important;
+}
+
+
+/* Upload description */
+.upload-area p,
+.upload-zone p,
+.drop-zone p {
+  color: var(--parakh-text-secondary) !important;
+}
+
+
+/* Inspection details */
+.inspection-details,
+.inspection-info,
+.details-section {
+  background: var(--parakh-surface) !important;
+  color: var(--parakh-text) !important;
+  border-color: var(--parakh-border) !important;
+}
+
+
+/* Detail rows */
+.detail-row,
+.inspection-detail-row {
+  border-color: var(--parakh-border) !important;
+}
+
+
+/* Detail labels */
+.detail-label,
+.inspection-detail-label {
+  color: var(--parakh-text-secondary) !important;
+}
+
+
+/* Detail values */
+.detail-value,
+.inspection-detail-value {
+  color: var(--parakh-text) !important;
+}
+
+
+/* Buttons */
+.inspection-page button {
+  font-family: inherit;
+}
+
+
+/* Inputs */
+.inspection-page input,
+.inspection-page textarea,
+.inspection-page select {
+  background: var(--parakh-surface-soft) !important;
+  color: var(--parakh-text) !important;
+  border-color: var(--parakh-border) !important;
+}
+
+
+/* Placeholder */
+.inspection-page input::placeholder,
+.inspection-page textarea::placeholder {
+  color: var(--parakh-text-muted) !important;
+}
+
+
+/* Analysis/result cards */
+.analysis-card,
+.analysis-panel,
+.result-card,
+.compliance-card,
+.compliance-panel {
+  background: var(--parakh-surface) !important;
+  color: var(--parakh-text) !important;
+  border-color: var(--parakh-border) !important;
+}
+
+
+/* Compliance text */
+.compliance-card h2,
+.compliance-card h3,
+.compliance-panel h2,
+.compliance-panel h3,
+.result-card h2,
+.result-card h3 {
+  color: var(--parakh-text) !important;
+}
+
+
+/* Tables */
+.inspection-page table {
+  background: var(--parakh-surface) !important;
+  color: var(--parakh-text) !important;
+}
+
+.inspection-page th {
+  background: var(--parakh-surface-soft) !important;
+  color: var(--parakh-text-secondary) !important;
+}
+
+.inspection-page td {
+  color: var(--parakh-text) !important;
+  border-color: var(--parakh-border) !important;
+}
+
+
+/* ============================================================
+   DARK MODE — INSPECTION SPECIFIC
+============================================================ */
+
+html[data-theme="dark"] .inspection-page {
+  background: #0b1220 !important;
+}
+
+html[data-theme="dark"] .inspection-page .inspection-card,
+html[data-theme="dark"] .inspection-page .inspection-panel,
+html[data-theme="dark"] .inspection-page .inspection-upload-card,
+html[data-theme="dark"] .inspection-page .inspection-details-card,
+html[data-theme="dark"] .inspection-page .upload-card,
+html[data-theme="dark"] .inspection-page .details-card {
+  background: #141e2f !important;
+  color: #f3f6fb !important;
+  border-color: #2a3950 !important;
+}
+
+
+html[data-theme="dark"] .inspection-page
+.upload-area,
+
+html[data-theme="dark"] .inspection-page
+.upload-zone,
+
+html[data-theme="dark"] .inspection-page
+.drop-zone {
+  background: #1b283c !important;
+  color: #f3f6fb !important;
+  border-color: #5b8df5 !important;
+}
+
+
+html[data-theme="dark"] .inspection-page
+h1,
+
+html[data-theme="dark"] .inspection-page
+h2,
+
+html[data-theme="dark"] .inspection-page
+h3,
+
+html[data-theme="dark"] .inspection-page
+h4 {
+  color: #f3f6fb !important;
+}
+
+
+html[data-theme="dark"] .inspection-page
+p,
+
+html[data-theme="dark"] .inspection-page
+span,
+
+html[data-theme="dark"] .inspection-page
+label {
+  color: #b4c0d1;
+}
+
+
+html[data-theme="dark"] .inspection-page
+input,
+
+html[data-theme="dark"] .inspection-page
+textarea,
+
+html[data-theme="dark"] .inspection-page
+select {
+  background: #1b283c !important;
+  color: #f3f6fb !important;
+  border-color: #2a3950 !important;
+}
+
+
+/* ============================================================
+   PARAKH 3D INSPECTION EXPERIENCE
+   Visual-only layer — API, AI, state and workflow unchanged.
+============================================================ */
+
+.inspection-page {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.inspection-page::before,
+.inspection-page::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+.inspection-page::before {
+  width: 420px;
+  height: 420px;
+  top: 80px;
+  right: -180px;
+  background: radial-gradient(circle, rgba(40,100,232,.12), transparent 68%);
+  animation: parakh-float-a 8s ease-in-out infinite;
+}
+
+.inspection-page::after {
+  width: 360px;
+  height: 360px;
+  left: -170px;
+  bottom: 120px;
+  background: radial-gradient(circle, rgba(22,196,127,.08), transparent 68%);
+  animation: parakh-float-b 10s ease-in-out infinite;
+}
+
+.inspection-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.inspection-card-heading h2 {
+  margin: 3px 0 0 !important;
+}
+
+.inspection-kicker {
+  display: block;
+  color: #2864e8 !important;
+  font-size: 9px !important;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.inspection-orb {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border: 1px solid rgba(40,100,232,.25);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffffff, #dce8ff 42%, #2864e8 100%);
+  box-shadow: 0 8px 22px rgba(40,100,232,.18);
+  animation: parakh-orb-float 4s ease-in-out infinite;
+}
+
+.inspection-orb::before,
+.inspection-orb::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(255,255,255,.65);
+  border-radius: 50%;
+}
+
+.inspection-orb::after {
+  inset: 12px;
+  border-color: rgba(255,255,255,.9);
+}
+
+.upload-area {
+  position: relative;
+  overflow: hidden;
+  perspective: 900px;
+}
+
+.upload-area::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 20%, rgba(255,255,255,.42) 50%, transparent 80%);
+  transform: translateX(-120%);
+  animation: parakh-shimmer 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.upload-3d-visual {
+  position: relative;
+  width: 150px;
+  height: 125px;
+  margin-bottom: 2px;
+  transform-style: preserve-3d;
+  animation: parakh-visual-float 4.5s ease-in-out infinite;
+}
+
+.upload-3d-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 1px solid rgba(40,100,232,.3);
+  border-radius: 50%;
+  transform-style: preserve-3d;
+}
+
+.upload-3d-ring.ring-a {
+  width: 118px;
+  height: 48px;
+  margin: -24px 0 0 -59px;
+  transform: rotateX(65deg);
+  animation: parakh-ring-spin 5s linear infinite;
+}
+
+.upload-3d-ring.ring-b {
+  width: 95px;
+  height: 95px;
+  margin: -47px 0 0 -47px;
+  border-color: rgba(22,196,127,.25);
+  transform: rotateY(65deg);
+  animation: parakh-ring-spin-reverse 7s linear infinite;
+}
+
+.upload-3d-cube {
+  position: absolute;
+  width: 66px;
+  height: 66px;
+  left: 42px;
+  top: 27px;
+  transform: rotateX(-10deg) rotateY(-28deg);
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 15px 12px rgba(16,33,63,.12));
+}
+
+.upload-3d-cube span {
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid #2864e8;
+  background: rgba(40,100,232,.08);
+}
+
+.cube-front {
+  width: 66px;
+  height: 66px;
+  transform: translateZ(33px);
+}
+
+.cube-side {
+  width: 66px;
+  height: 66px;
+  transform: rotateY(90deg) translateZ(33px);
+}
+
+.cube-top {
+  width: 66px;
+  height: 66px;
+  transform: rotateX(90deg) translateZ(33px);
+  background: rgba(22,196,127,.10) !important;
+  border-color: #16b978 !important;
+}
+
+.cube-scan {
+  left: 5px;
+  right: 5px;
+  top: 29px;
+  height: 2px;
+  border: 0 !important;
+  background: #16c77b;
+  box-shadow: 0 0 12px rgba(22,199,123,.8);
+  transform: translateZ(35px);
+  animation: parakh-cube-scan 2.2s ease-in-out infinite;
+}
+
+.upload-scan-beam {
+  position: absolute;
+  width: 105px;
+  height: 2px;
+  left: 23px;
+  top: 62px;
+  background: linear-gradient(90deg, transparent, #16c77b, transparent);
+  box-shadow: 0 0 15px rgba(22,199,123,.7);
+  opacity: .8;
+  animation: parakh-beam 2.4s ease-in-out infinite;
+}
+
+.upload-area .upload-icon {
+  position: relative;
+  z-index: 2;
+  margin-top: 5px;
+}
+
+.preview-frame {
+  position: relative;
+  width: min(100%, 850px);
+  max-height: 560px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  box-sizing: border-box;
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(40,100,232,.08), rgba(22,196,127,.04));
+  border: 1px solid rgba(40,100,232,.14);
+  box-shadow: 0 18px 50px rgba(16,33,63,.12), inset 0 0 35px rgba(40,100,232,.04);
+  transform: perspective(1200px) rotateX(1deg);
+}
+
+.preview-frame img {
+  max-width: 100% !important;
+  max-height: 530px !important;
+  position: relative;
+  z-index: 1;
+}
+
+.preview-scan-line {
+  position: absolute;
+  z-index: 3;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #16c77b, transparent);
+  box-shadow: 0 0 16px rgba(22,199,123,.75);
+  opacity: .55;
+  animation: parakh-preview-scan 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.preview-corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  z-index: 4;
+  border-color: #2864e8;
+  border-style: solid;
+}
+
+.corner-tl { left: 7px; top: 7px; border-width: 2px 0 0 2px; }
+.corner-tr { right: 7px; top: 7px; border-width: 2px 2px 0 0; }
+.corner-bl { left: 7px; bottom: 7px; border-width: 0 0 2px 2px; }
+.corner-br { right: 7px; bottom: 7px; border-width: 0 2px 2px 0; }
+
+.analysis-3d-status {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 2px auto 18px;
+  perspective: 800px;
+}
+
+.analysis-core {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  left: 39px;
+  top: 39px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffffff, #6d98ef 35%, #2864e8 70%, #173f9a);
+  box-shadow: 0 0 30px rgba(40,100,232,.45);
+  animation: parakh-core-pulse 1.6s ease-in-out infinite;
+}
+
+.analysis-core span {
+  position: absolute;
+  inset: 13px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 12px rgba(255,255,255,.9);
+}
+
+.analysis-core-label {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  pointer-events: none;
+}
+
+.analysis-orbit {
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(40,100,232,.32);
+  border-radius: 50%;
+  transform-style: preserve-3d;
+}
+
+.orbit-one {
+  transform: rotateX(65deg);
+  animation: parakh-orbit-a 3s linear infinite;
+}
+
+.orbit-two {
+  transform: rotateY(65deg);
+  border-color: rgba(22,196,127,.3);
+  animation: parakh-orbit-b 4s linear infinite;
+}
+
+.orbit-three {
+  inset: 27px;
+  transform: rotateX(65deg) rotateY(35deg);
+  border-color: rgba(40,100,232,.18);
+  animation: parakh-orbit-c 2.5s linear infinite;
+}
+
+html[data-theme="dark"] .inspection-card-heading .inspection-kicker {
+  color: #6f9cff !important;
+}
+
+html[data-theme="dark"] .inspection-orb {
+  background: radial-gradient(circle at 35% 30%, #dce8ff, #477ee8 45%, #173f9a 100%);
+  border-color: rgba(111,156,255,.3);
+}
+
+html[data-theme="dark"] .upload-area::before {
+  background: linear-gradient(115deg, transparent 20%, rgba(255,255,255,.06) 50%, transparent 80%);
+}
+
+html[data-theme="dark"] .upload-3d-ring.ring-a {
+  border-color: rgba(111,156,255,.35);
+}
+
+html[data-theme="dark"] .upload-3d-ring.ring-b {
+  border-color: rgba(22,199,123,.3);
+}
+
+html[data-theme="dark"] .upload-3d-cube span {
+  border-color: #5d8df0;
+  background: rgba(93,141,240,.08);
+}
+
+html[data-theme="dark"] .cube-top {
+  border-color: #16c77b !important;
+}
+
+html[data-theme="dark"] .preview-frame {
+  background: linear-gradient(145deg, rgba(93,141,240,.09), rgba(22,199,123,.04));
+  border-color: rgba(93,141,240,.22);
+  box-shadow: 0 18px 50px rgba(0,0,0,.28), inset 0 0 35px rgba(93,141,240,.04);
+}
+
+@keyframes parakh-float-a {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  50% { transform: translate3d(-35px,35px,0) scale(1.08); }
+}
+
+@keyframes parakh-float-b {
+  0%,100% { transform: translate3d(0,0,0); }
+  50% { transform: translate3d(30px,-25px,0) scale(1.05); }
+}
+
+@keyframes parakh-orb-float {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(8deg); }
+}
+
+@keyframes parakh-visual-float {
+  0%,100% { transform: translateY(0) rotateX(0deg); }
+  50% { transform: translateY(-7px) rotateX(2deg); }
+}
+
+@keyframes parakh-ring-spin {
+  to { transform: rotateX(65deg) rotateZ(360deg); }
+}
+
+@keyframes parakh-ring-spin-reverse {
+  to { transform: rotateY(65deg) rotateZ(-360deg); }
+}
+
+@keyframes parakh-cube-scan {
+  0%,100% { top: 8px; opacity: .35; }
+  50% { top: 56px; opacity: 1; }
+}
+
+@keyframes parakh-beam {
+  0%,100% { transform: translateY(-24px); opacity: 0; }
+  35%,65% { transform: translateY(22px); opacity: .9; }
+}
+
+@keyframes parakh-preview-scan {
+  0%,100% { top: 14%; opacity: 0; }
+  15%,80% { opacity: .7; }
+  50% { top: 82%; }
+}
+
+@keyframes parakh-shimmer {
+  0%,35% { transform: translateX(-120%); }
+  65%,100% { transform: translateX(120%); }
+}
+
+@keyframes parakh-core-pulse {
+  0%,100% { transform: scale(.9); box-shadow: 0 0 22px rgba(40,100,232,.3); }
+  50% { transform: scale(1.08); box-shadow: 0 0 38px rgba(40,100,232,.6); }
+}
+
+@keyframes parakh-orbit-a {
+  to { transform: rotateX(65deg) rotateZ(360deg); }
+}
+
+@keyframes parakh-orbit-b {
+  to { transform: rotateY(65deg) rotateZ(-360deg); }
+}
+
+@keyframes parakh-orbit-c {
+  to { transform: rotateX(65deg) rotateY(35deg) rotateZ(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inspection-page *,
+  .inspection-page::before,
+  .inspection-page::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+
+/* ============================================================
+   CAMERA SCAN ENTRY
+============================================================ */
+.camera-scan-button { width:100%; min-height:64px; display:flex; align-items:center; justify-content:center; gap:13px; margin-bottom:12px; padding:10px 16px; border:1px solid rgba(40,100,232,.35); border-radius:13px; background:linear-gradient(135deg,#edf4ff,#f7fbff); color:#172946; cursor:pointer; box-shadow:0 8px 24px rgba(40,100,232,.08); transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease; }
+.camera-scan-button:hover:not(:disabled){ transform:translateY(-2px); border-color:#2864e8; box-shadow:0 12px 28px rgba(40,100,232,.14); }
+.camera-scan-button:disabled{opacity:.55;cursor:not-allowed;}
+.camera-scan-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:11px;background:#2864e8;color:#fff;font-size:19px;box-shadow:0 8px 18px rgba(40,100,232,.2);}
+.camera-scan-button strong,.camera-scan-button small{display:block;text-align:left;}
+.camera-scan-button strong{font-size:14px;}
+.camera-scan-button small{margin-top:3px;color:#718098;font-size:10px;font-weight:600;}
+.camera-or-divider{display:flex;align-items:center;gap:10px;margin:2px 0 12px;color:#8a97aa;font-size:9px;font-weight:800;letter-spacing:1px;}
+.camera-or-divider::before,.camera-or-divider::after{content:"";flex:1;height:1px;background:#e4e9f0;}
+html[data-theme="dark"] .camera-scan-button{border-color:rgba(111,156,255,.3);background:linear-gradient(135deg,#17253a,#1b2a41);color:#f3f6fb;}
+html[data-theme="dark"] .camera-scan-button small{color:#aab7c9;}
+html[data-theme="dark"] .camera-or-divider::before,html[data-theme="dark"] .camera-or-divider::after{background:#2b3a50;}
+@media (max-width:550px){.camera-scan-button{min-height:58px;}}

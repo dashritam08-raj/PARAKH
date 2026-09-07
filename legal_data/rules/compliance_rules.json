@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "regulation": "Legal Metrology (Packaged Commodities) Rules, 2011",
+  "rules": [
+    {
+      "rule_id": "PCR-R6",
+      "rule_number": "6",
+      "title": "Declarations to be made on every package",
+      "source_document": "2011.pdf",
+      "status": "draft",
+      "requirements": [
+        {
+          "id": "PCR-R6-A",
+          "field": "manufacturer_or_packer_or_importer",
+          "description": "Name and address of the manufacturer, packer where applicable, and importer for imported packages.",
+          "mandatory": true,
+          "applicability": "general"
+        },
+        {
+          "id": "PCR-R6-B",
+          "field": "commodity_name",
+          "description": "Common or generic name of the commodity.",
+          "mandatory": true,
+          "applicability": "general"
+        },
+        {
+          "id": "PCR-R6-C",
+          "field": "net_quantity",
+          "description": "Net quantity in the applicable standard unit of weight or measure, or number where applicable.",
+          "mandatory": true,
+          "applicability": "general"
+        },
+        {
+          "id": "PCR-R6-D",
+          "field": "manufacture_or_prepack_date",
+          "description": "Month and year declaration as applicable under the rule.",
+          "mandatory": true,
+          "applicability": "subject_to_exceptions"
+        },
+        {
+          "id": "PCR-R6-E",
+          "field": "retail_sale_price",
+          "description": "Retail sale price of the package.",
+          "mandatory": true,
+          "applicability": "subject_to_exceptions"
+        },
+        {
+          "id": "PCR-R6-F",
+          "field": "dimensions",
+          "description": "Dimensions of the commodity where the size of the commodity is relevant.",
+          "mandatory": false,
+          "applicability": "where_relevant"
+        },
+        {
+          "id": "PCR-R6-G",
+          "field": "other_required_declarations",
+          "description": "Other matters specified in the Legal Metrology (Packaged Commodities) Rules, 2011.",
+          "mandatory": false,
+          "applicability": "rule_dependent"
+        },
+        {
+          "id": "PCR-R6-2",
+          "field": "consumer_complaint_contact",
+          "description": "Name, address, telephone number and email address, if available, of the person or office that can be contacted in case of consumer complaints.",
+          "mandatory": true,
+          "applicability": "general"
+        }
+      ]
+    }
+  ]
+}

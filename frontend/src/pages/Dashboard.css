@@ -1,0 +1,796 @@
+
+/* ============================================================
+   PARAKH DASHBOARD — PREMIUM 3D POLISH
+   Visual-only additions. Existing dashboard logic is untouched.
+============================================================ */
+
+.dashboard-page {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.dashboard-page::before,
+.dashboard-page::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+.dashboard-page::before {
+  width: 480px;
+  height: 480px;
+  top: -250px;
+  right: -180px;
+  background: radial-gradient(circle, rgba(40,100,232,.11), transparent 68%);
+  animation: dashboardFloatOne 10s ease-in-out infinite;
+}
+
+.dashboard-page::after {
+  width: 380px;
+  height: 380px;
+  bottom: 60px;
+  left: -230px;
+  background: radial-gradient(circle, rgba(22,196,127,.07), transparent 68%);
+  animation: dashboardFloatTwo 12s ease-in-out infinite;
+}
+
+/* =========================
+   3D HERO ORBIT
+========================= */
+
+.dashboard-hero-left {
+  position: relative;
+  padding-left: 84px;
+}
+
+.dashboard-3d-orbit {
+  position: absolute;
+  width: 66px;
+  height: 66px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-style: preserve-3d;
+  perspective: 700px;
+}
+
+.dashboard-orbit {
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  border: 1px solid rgba(40,100,232,.25);
+  transform-style: preserve-3d;
+}
+
+.dashboard-orbit::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  left: 50%;
+  top: -3px;
+  margin-left: -3px;
+  border-radius: 50%;
+  background: #2864e8;
+  box-shadow: 0 0 12px rgba(40,100,232,.65);
+}
+
+.dashboard-orbit.orbit-a {
+  transform: rotateX(65deg);
+  animation: dashboardOrbitA 4s linear infinite;
+}
+
+.dashboard-orbit.orbit-b {
+  inset: 11px;
+  border-color: rgba(22,196,127,.25);
+  transform: rotateY(65deg);
+  animation: dashboardOrbitB 5s linear infinite;
+}
+
+.dashboard-orbit-core {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  left: 16px;
+  top: 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffffff, #78a0ed 38%, #2864e8 75%, #173f9a);
+  box-shadow:
+    0 0 22px rgba(40,100,232,.32),
+    inset 0 0 10px rgba(255,255,255,.45);
+  animation: dashboardCorePulse 2.5s ease-in-out infinite;
+}
+
+.dashboard-orbit-core span {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 950;
+  text-shadow: 0 1px 5px rgba(0,0,0,.18);
+}
+
+/* =========================
+   CLOCK POLISH
+========================= */
+
+.dashboard-clock {
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.dashboard-clock:hover {
+  transform: translateY(-2px);
+  border-color: rgba(40,100,232,.3);
+  box-shadow: 0 10px 25px rgba(40,100,232,.09);
+}
+
+.dashboard-clock-icon {
+  animation: clockPulse 2.5s ease-in-out infinite;
+}
+
+/* =========================
+   STAT CARDS
+========================= */
+
+.dashboard-stat-card {
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.dashboard-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 32px rgba(16,33,63,.09);
+  border-color: rgba(40,100,232,.18);
+}
+
+.dashboard-stat-card .stat-icon {
+  transition: transform .25s ease;
+}
+
+.dashboard-stat-card:hover .stat-icon {
+  transform: translateY(-2px) rotate(-4deg);
+}
+
+/* =========================
+   PANEL DEPTH
+========================= */
+
+.dashboard-panel {
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.dashboard-panel:hover {
+  box-shadow: 0 15px 38px rgba(16,33,63,.075);
+}
+
+/* =========================
+   COMPLIANCE RING
+========================= */
+
+.compliance-ring {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: complianceFloat 4s ease-in-out infinite;
+  box-shadow:
+    0 15px 35px rgba(16,33,63,.10),
+    0 0 0 7px rgba(40,100,232,.025);
+}
+
+.compliance-ring::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 1px dashed rgba(40,100,232,.17);
+  animation: complianceSpin 12s linear infinite;
+  pointer-events: none;
+}
+
+.ring-inner {
+  box-shadow: inset 0 0 22px rgba(40,100,232,.04);
+}
+
+/* =========================
+   QUICK ACTIONS
+========================= */
+
+.quick-action {
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.quick-action:hover {
+  transform: translateX(4px);
+  box-shadow: 0 10px 25px rgba(16,33,63,.07);
+}
+
+.quick-action .quick-action-icon {
+  transition: transform .25s ease;
+}
+
+.quick-action:hover .quick-action-icon {
+  transform: scale(1.07) rotate(-3deg);
+}
+
+/* =========================
+   RECENT TABLE
+========================= */
+
+.recent-row {
+  transition:
+    background .2s ease,
+    transform .2s ease;
+}
+
+.recent-row:hover {
+  transform: translateX(2px);
+}
+
+.row-view-button {
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.row-view-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(40,100,232,.12);
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+html[data-theme="dark"] .dashboard-page::before {
+  background: radial-gradient(circle, rgba(91,141,245,.13), transparent 68%);
+}
+
+html[data-theme="dark"] .dashboard-page::after {
+  background: radial-gradient(circle, rgba(22,199,123,.08), transparent 68%);
+}
+
+html[data-theme="dark"] .dashboard-hero-left {
+  color: #f3f6fb;
+}
+
+html[data-theme="dark"] .dashboard-orbit {
+  border-color: rgba(111,156,255,.30);
+}
+
+html[data-theme="dark"] .dashboard-orbit.orbit-b {
+  border-color: rgba(22,199,123,.27);
+}
+
+html[data-theme="dark"] .dashboard-orbit-core {
+  background: radial-gradient(circle at 35% 30%, #dce8ff, #477ee8 43%, #173f9a 100%);
+  box-shadow:
+    0 0 28px rgba(91,141,245,.42),
+    inset 0 0 10px rgba(255,255,255,.35);
+}
+
+html[data-theme="dark"] .dashboard-clock:hover {
+  border-color: rgba(111,156,255,.35);
+  box-shadow: 0 10px 28px rgba(0,0,0,.25);
+}
+
+html[data-theme="dark"] .dashboard-stat-card:hover,
+html[data-theme="dark"] .dashboard-panel:hover {
+  box-shadow: 0 15px 38px rgba(0,0,0,.28);
+}
+
+html[data-theme="dark"] .compliance-ring::after {
+  border-color: rgba(111,156,255,.20);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes dashboardFloatOne {
+  0%, 100% {
+    transform: translate3d(0,0,0) scale(1);
+  }
+  50% {
+    transform: translate3d(-28px,30px,0) scale(1.07);
+  }
+}
+
+@keyframes dashboardFloatTwo {
+  0%, 100% {
+    transform: translate3d(0,0,0) scale(1);
+  }
+  50% {
+    transform: translate3d(28px,-20px,0) scale(1.06);
+  }
+}
+
+@keyframes dashboardOrbitA {
+  to {
+    transform: rotateX(65deg) rotateZ(360deg);
+  }
+}
+
+@keyframes dashboardOrbitB {
+  to {
+    transform: rotateY(65deg) rotateZ(-360deg);
+  }
+}
+
+@keyframes dashboardCorePulse {
+  0%, 100% {
+    transform: scale(.94);
+    box-shadow: 0 0 20px rgba(40,100,232,.28);
+  }
+  50% {
+    transform: scale(1.07);
+    box-shadow: 0 0 32px rgba(40,100,232,.50);
+  }
+}
+
+@keyframes clockPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(40,100,232,0);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(40,100,232,.05);
+  }
+}
+
+@keyframes complianceFloat {
+  0%, 100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotateX(2deg);
+  }
+}
+
+@keyframes complianceSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .dashboard-hero-left {
+    padding-left: 0;
+    padding-top: 76px;
+  }
+
+  .dashboard-3d-orbit {
+    left: 0;
+    top: 8px;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-page *,
+  .dashboard-page::before,
+  .dashboard-page::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .dashboard-stat-card:hover,
+  .dashboard-panel:hover,
+  .quick-action:hover,
+  .recent-row:hover {
+    transform: none !important;
+  }
+}
+
+/* ============================================================
+   PARAKH DASHBOARD — PREMIUM 3D POLISH
+   Visual-only additions. Existing dashboard logic is untouched.
+============================================================ */
+
+.dashboard-page {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.dashboard-page::before,
+.dashboard-page::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+.dashboard-page::before {
+  width: 480px;
+  height: 480px;
+  top: -250px;
+  right: -180px;
+  background: radial-gradient(circle, rgba(40,100,232,.11), transparent 68%);
+  animation: dashboardFloatOne 10s ease-in-out infinite;
+}
+
+.dashboard-page::after {
+  width: 380px;
+  height: 380px;
+  bottom: 60px;
+  left: -230px;
+  background: radial-gradient(circle, rgba(22,196,127,.07), transparent 68%);
+  animation: dashboardFloatTwo 12s ease-in-out infinite;
+}
+
+/* =========================
+   3D HERO ORBIT
+========================= */
+
+.dashboard-hero-left {
+  position: relative;
+  padding-left: 84px;
+}
+
+.dashboard-3d-orbit {
+  position: absolute;
+  width: 66px;
+  height: 66px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-style: preserve-3d;
+  perspective: 700px;
+}
+
+.dashboard-orbit {
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  border: 1px solid rgba(40,100,232,.25);
+  transform-style: preserve-3d;
+}
+
+.dashboard-orbit::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  left: 50%;
+  top: -3px;
+  margin-left: -3px;
+  border-radius: 50%;
+  background: #2864e8;
+  box-shadow: 0 0 12px rgba(40,100,232,.65);
+}
+
+.dashboard-orbit.orbit-a {
+  transform: rotateX(65deg);
+  animation: dashboardOrbitA 4s linear infinite;
+}
+
+.dashboard-orbit.orbit-b {
+  inset: 11px;
+  border-color: rgba(22,196,127,.25);
+  transform: rotateY(65deg);
+  animation: dashboardOrbitB 5s linear infinite;
+}
+
+.dashboard-orbit-core {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  left: 16px;
+  top: 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffffff, #78a0ed 38%, #2864e8 75%, #173f9a);
+  box-shadow:
+    0 0 22px rgba(40,100,232,.32),
+    inset 0 0 10px rgba(255,255,255,.45);
+  animation: dashboardCorePulse 2.5s ease-in-out infinite;
+}
+
+.dashboard-orbit-core span {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 950;
+  text-shadow: 0 1px 5px rgba(0,0,0,.18);
+}
+
+/* =========================
+   CLOCK POLISH
+========================= */
+
+.dashboard-clock {
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.dashboard-clock:hover {
+  transform: translateY(-2px);
+  border-color: rgba(40,100,232,.3);
+  box-shadow: 0 10px 25px rgba(40,100,232,.09);
+}
+
+.dashboard-clock-icon {
+  animation: clockPulse 2.5s ease-in-out infinite;
+}
+
+/* =========================
+   STAT CARDS
+========================= */
+
+.dashboard-stat-card {
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.dashboard-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 32px rgba(16,33,63,.09);
+  border-color: rgba(40,100,232,.18);
+}
+
+.dashboard-stat-card .stat-icon {
+  transition: transform .25s ease;
+}
+
+.dashboard-stat-card:hover .stat-icon {
+  transform: translateY(-2px) rotate(-4deg);
+}
+
+/* =========================
+   PANEL DEPTH
+========================= */
+
+.dashboard-panel {
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.dashboard-panel:hover {
+  box-shadow: 0 15px 38px rgba(16,33,63,.075);
+}
+
+/* =========================
+   COMPLIANCE RING
+========================= */
+
+.compliance-ring {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: complianceFloat 4s ease-in-out infinite;
+  box-shadow:
+    0 15px 35px rgba(16,33,63,.10),
+    0 0 0 7px rgba(40,100,232,.025);
+}
+
+.compliance-ring::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 1px dashed rgba(40,100,232,.17);
+  animation: complianceSpin 12s linear infinite;
+  pointer-events: none;
+}
+
+.ring-inner {
+  box-shadow: inset 0 0 22px rgba(40,100,232,.04);
+}
+
+/* =========================
+   QUICK ACTIONS
+========================= */
+
+.quick-action {
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.quick-action:hover {
+  transform: translateX(4px);
+  box-shadow: 0 10px 25px rgba(16,33,63,.07);
+}
+
+.quick-action .quick-action-icon {
+  transition: transform .25s ease;
+}
+
+.quick-action:hover .quick-action-icon {
+  transform: scale(1.07) rotate(-3deg);
+}
+
+/* =========================
+   RECENT TABLE
+========================= */
+
+.recent-row {
+  transition:
+    background .2s ease,
+    transform .2s ease;
+}
+
+.recent-row:hover {
+  transform: translateX(2px);
+}
+
+.row-view-button {
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.row-view-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(40,100,232,.12);
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+html[data-theme="dark"] .dashboard-page::before {
+  background: radial-gradient(circle, rgba(91,141,245,.13), transparent 68%);
+}
+
+html[data-theme="dark"] .dashboard-page::after {
+  background: radial-gradient(circle, rgba(22,199,123,.08), transparent 68%);
+}
+
+html[data-theme="dark"] .dashboard-hero-left {
+  color: #f3f6fb;
+}
+
+html[data-theme="dark"] .dashboard-orbit {
+  border-color: rgba(111,156,255,.30);
+}
+
+html[data-theme="dark"] .dashboard-orbit.orbit-b {
+  border-color: rgba(22,199,123,.27);
+}
+
+html[data-theme="dark"] .dashboard-orbit-core {
+  background: radial-gradient(circle at 35% 30%, #dce8ff, #477ee8 43%, #173f9a 100%);
+  box-shadow:
+    0 0 28px rgba(91,141,245,.42),
+    inset 0 0 10px rgba(255,255,255,.35);
+}
+
+html[data-theme="dark"] .dashboard-clock:hover {
+  border-color: rgba(111,156,255,.35);
+  box-shadow: 0 10px 28px rgba(0,0,0,.25);
+}
+
+html[data-theme="dark"] .dashboard-stat-card:hover,
+html[data-theme="dark"] .dashboard-panel:hover {
+  box-shadow: 0 15px 38px rgba(0,0,0,.28);
+}
+
+html[data-theme="dark"] .compliance-ring::after {
+  border-color: rgba(111,156,255,.20);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes dashboardFloatOne {
+  0%, 100% {
+    transform: translate3d(0,0,0) scale(1);
+  }
+  50% {
+    transform: translate3d(-28px,30px,0) scale(1.07);
+  }
+}
+
+@keyframes dashboardFloatTwo {
+  0%, 100% {
+    transform: translate3d(0,0,0) scale(1);
+  }
+  50% {
+    transform: translate3d(28px,-20px,0) scale(1.06);
+  }
+}
+
+@keyframes dashboardOrbitA {
+  to {
+    transform: rotateX(65deg) rotateZ(360deg);
+  }
+}
+
+@keyframes dashboardOrbitB {
+  to {
+    transform: rotateY(65deg) rotateZ(-360deg);
+  }
+}
+
+@keyframes dashboardCorePulse {
+  0%, 100% {
+    transform: scale(.94);
+    box-shadow: 0 0 20px rgba(40,100,232,.28);
+  }
+  50% {
+    transform: scale(1.07);
+    box-shadow: 0 0 32px rgba(40,100,232,.50);
+  }
+}
+
+@keyframes clockPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(40,100,232,0);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(40,100,232,.05);
+  }
+}
+
+@keyframes complianceFloat {
+  0%, 100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotateX(2deg);
+  }
+}
+
+@keyframes complianceSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .dashboard-hero-left {
+    padding-left: 0;
+    padding-top: 76px;
+  }
+
+  .dashboard-3d-orbit {
+    left: 0;
+    top: 8px;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-page *,
+  .dashboard-page::before,
+  .dashboard-page::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .dashboard-stat-card:hover,
+  .dashboard-panel:hover,
+  .quick-action:hover,
+  .recent-row:hover {
+    transform: none !important;
+  }
+}
