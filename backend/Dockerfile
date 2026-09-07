@@ -14,13 +14,13 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Install Python dependencies
-COPY requirements.txt .
+COPY backend/requirements.txt ./requirements.txt
 
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy backend application
-COPY app ./app
-COPY check_db.py .
+COPY backend/app ./app
+COPY backend/check_db.py .
 
 # Copy PARAKH legal rules
 COPY legal_data ./legal_data
